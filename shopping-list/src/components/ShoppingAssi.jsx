@@ -58,19 +58,11 @@ const ShoppingAssi = () => {
 		setItems(newItems);
 	}
 
-
-	// const totalQuantity = () => {
-		
-	// 	let result = 0;
-	// 	for (let i = 0; i < items.quantity.length; i++){
-	// 		result += items.quantity[i];
-	// 	}
-	// 	return result;
-
-
-	
-
-	// }
+const totalQuantity = () => {
+  return items.reduce((sum, item) => {
+    return sum + item.quantity;
+  }, 0);
+};
 
 
 	return (
@@ -124,7 +116,7 @@ const ShoppingAssi = () => {
 					))}
 				</div>
 				<div className='total'>Total items: {items.length}</div>
-				{/* <div className='total-Items'>Total Quantity: {totalQuantity()}</div> */}
+				 <div className='total-Items'>Total Quantity: {totalQuantity()}</div> 
 
 			</div>
 		</div>
